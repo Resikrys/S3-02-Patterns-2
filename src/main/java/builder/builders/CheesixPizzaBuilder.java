@@ -4,6 +4,8 @@ import builder.pizzas.Pizza;
 import builder.components.Size;
 import builder.components.Dough;
 import builder.components.Toppings;
+import java.util.Set;
+import java.util.HashSet;
 
 public class CheesixPizzaBuilder implements PizzaBuilder {
     private Pizza.Builder pizzaBuilder; // Internal builder instance
@@ -13,8 +15,8 @@ public class CheesixPizzaBuilder implements PizzaBuilder {
         // Set default values for a Cheesix Pizza
         this.pizzaBuilder
                 .withSize(Size.MEDIUM)
-                .withDough(Dough.REGULAR)
-                .withToppings(Toppings.CHEESE);
+                .withDough(Dough.REGULAR);
+        this.pizzaBuilder.addTopping(Toppings.CHEESE);
     }
 
     // These methods allow overriding defaults if needed, or you can just use the constructor's defaults
@@ -31,10 +33,16 @@ public class CheesixPizzaBuilder implements PizzaBuilder {
     }
 
     @Override
-    public PizzaBuilder setToppings(Toppings toppings) {
-        this.pizzaBuilder.withToppings(toppings);
+    public PizzaBuilder addTopping(Toppings topping) {
+        this.pizzaBuilder.addTopping(topping);
         return this;
     }
+
+//    @Override
+//    public PizzaBuilder withToppings(Set<Toppings> toppings) {
+//        this.pizzaBuilder.withToppings(toppings);
+//        return this;
+//    }
 
     @Override
     public Pizza build() {

@@ -4,6 +4,8 @@ import builder.pizzas.Pizza;
 import builder.components.Size;
 import builder.components.Dough;
 import builder.components.Toppings;
+import java.util.Set;
+import java.util.HashSet;
 
 public class BbqPizzaBuilder implements PizzaBuilder {
     private Pizza.Builder pizzaBuilder;
@@ -12,8 +14,10 @@ public class BbqPizzaBuilder implements PizzaBuilder {
         this.pizzaBuilder = new Pizza.Builder();
         this.pizzaBuilder
                 .withSize(Size.FAMILIAR)
-                .withDough(Dough.REGULAR)
-                .withToppings(Toppings.CHICKEN);
+                .withDough(Dough.REGULAR);
+        this.pizzaBuilder.addTopping(Toppings.CHICKEN);
+        this.pizzaBuilder.addTopping(Toppings.BBQ_SAUCE);
+        this.pizzaBuilder.addTopping(Toppings.ONIONS);
     }
 
     @Override
@@ -29,10 +33,16 @@ public class BbqPizzaBuilder implements PizzaBuilder {
     }
 
     @Override
-    public PizzaBuilder setToppings(Toppings toppings) {
-        this.pizzaBuilder.withToppings(toppings);
+    public PizzaBuilder addTopping(Toppings topping) {
+        this.pizzaBuilder.addTopping(topping);
         return this;
     }
+
+//    @Override
+//    public PizzaBuilder withToppings(Set<Toppings> toppings) {
+//        this.pizzaBuilder.withToppings(toppings);
+//        return this;
+//    }
 
     @Override
     public Pizza build() {
