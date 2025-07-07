@@ -1,9 +1,13 @@
 package builder.pizzas;
 
+import builder.components.Size;
+import builder.components.Dough;
+import builder.components.Toppings;
+
 public class Pizza {
-    private String size;
-    private String dough;
-    private String toppings;
+    private Size size;
+    private Dough dough;
+    private Toppings toppings;
 
     // Private constructor to be used only by the Builder
     private Pizza(Builder builder) {
@@ -12,46 +16,50 @@ public class Pizza {
         this.toppings = builder.toppings;
     }
 
-    public String getSize() {
+    public Size getSize() {
         return size;
     }
 
-    public String getDough() {
+    public Dough getDough() {
         return dough;
     }
 
-    public String getToppings() {
+    public Toppings getToppings() {
         return toppings;
     }
 
     @Override
     public String toString() {
-        return "Pizza [Size: " + size + ", Dough: " + dough + ", Toppings: " + toppings + "]";
+        return "Pizza [Size: " + size.getDescription() + ", Dough: " + dough.getDescription() +
+                ", Toppings: " + (toppings != null ? toppings.getDescription() : "None") + "]";
     }
 
     // --- Inner Builder Class --- Return "this" for method chaining
     public static class Builder {
-        private String size;
-        private String dough;
-        private String toppings;
+        private Size size;
+        private Dough dough;
+        private Toppings toppings;
 
-        public Builder withSize(String size) {
+        public Builder withSize(Size size) {
             this.size = size;
             return this;
         }
 
-        public Builder withDough(String dough) {
+        public Builder withDough(Dough dough) {
             this.dough = dough;
             return this;
         }
 
-        public Builder withToppings(String toppings) {
+        public Builder withToppings(Toppings toppings) {
             this.toppings = toppings;
             return this;
         }
 
         // The build method creates the Pizza instance
         public Pizza build() {
+            if (size == null || dough == null) {
+                throw new IllegalStateException("Pizza must have a size and dough."); //Basic validation
+            }
             return new Pizza(this);
         }
     }
