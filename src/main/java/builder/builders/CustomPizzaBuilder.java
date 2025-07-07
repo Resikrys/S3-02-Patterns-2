@@ -1,0 +1,37 @@
+package builder.builders;
+
+import builder.pizzas.Pizza;
+import builder.components.Size;
+import builder.components.Dough;
+import builder.components.Toppings;
+
+public class CustomPizzaBuilder implements PizzaBuilder {
+    private Pizza.Builder pizzaBuilder;
+
+    public CustomPizzaBuilder() {
+        this.pizzaBuilder = new Pizza.Builder();  // No defaults set
+    }
+
+    @Override
+    public PizzaBuilder setSize(Size size) {
+        this.pizzaBuilder.withSize(size);
+        return this;
+    }
+
+    @Override
+    public PizzaBuilder setDough(Dough dough) {
+        this.pizzaBuilder.withDough(dough);
+        return this;
+    }
+
+    @Override
+    public PizzaBuilder setToppings(Toppings toppings) {
+        this.pizzaBuilder.withToppings(toppings);
+        return this;
+    }
+
+    @Override
+    public Pizza build() {
+        return this.pizzaBuilder.build();
+    }
+}
