@@ -19,6 +19,7 @@ public class PizzaMaker {
     public Pizza makeCheesixPizza() {
         // Reset the builder to a clean state for a new pizza + call build (constructor by default or explicitly)
         // [ For a director, passing a fresh builder is cleaner. ]
+        pizzaBuilder.reset();
 
         pizzaBuilder.setSize(Size.MEDIUM);
         pizzaBuilder.setDough(Dough.REGULAR);
@@ -26,15 +27,15 @@ public class PizzaMaker {
         Set<Toppings> cheesixToppings = new HashSet<>();
         cheesixToppings.add(Toppings.CHEESE);
         // Add more cheese variations
-        // cheesixToppings.add(Toppings.MOZZARELLA);
-        // cheesixToppings.add(Toppings.PARMESAN);
-
-        //pizzaBuilder.withToppings(cheesixToppings); // Set all toppings at once
+         cheesixToppings.add(Toppings.MOZZARELLA);
+         cheesixToppings.add(Toppings.PARMESAN);
+        pizzaBuilder.withToppings(cheesixToppings);
 
         return pizzaBuilder.build();
     }
 
     public Pizza makeVeggiePizza() {
+        pizzaBuilder.reset();
         pizzaBuilder.setSize(Size.MEDIUM);
         pizzaBuilder.setDough(Dough.THIN_CRUST);
 
@@ -43,12 +44,13 @@ public class PizzaMaker {
         veggieToppings.add(Toppings.ONIONS);
         veggieToppings.add(Toppings.PEPPERS);
         veggieToppings.add(Toppings.OLIVES);
+        pizzaBuilder.withToppings(veggieToppings);
 
-        //pizzaBuilder.withToppings(veggieToppings);
         return pizzaBuilder.build();
     }
 
     public Pizza makeBbqPizza() {
+        pizzaBuilder.reset();
         pizzaBuilder.setSize(Size.FAMILIAR);
         pizzaBuilder.setDough(Dough.REGULAR);
 
@@ -56,14 +58,15 @@ public class PizzaMaker {
         bbqToppings.add(Toppings.CHICKEN);
         bbqToppings.add(Toppings.BBQ_SAUCE);
         bbqToppings.add(Toppings.ONIONS);
+        pizzaBuilder.withToppings(bbqToppings);
 
-        //pizzaBuilder.withToppings(bbqToppings);
         return pizzaBuilder.build();
     }
 
     // This method allows external control over the specific builder's methods
     // (director simply passes the client's choices directly to the builder)
     public Pizza makeCustomPizza(Size size, Dough dough, Set<Toppings> toppings) {
+        pizzaBuilder.reset();
         pizzaBuilder.setSize(size);
         pizzaBuilder.setDough(dough);
         pizzaBuilder.withToppings(toppings);

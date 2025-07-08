@@ -60,7 +60,7 @@ public class Pizza {
             return this;
         }
 
-        // NEW METHOD: Add a single topping
+        // Add a single topping
         public Builder addTopping(Toppings topping) {
             if (topping != null) {
                 this.toppings.add(topping);
@@ -68,7 +68,7 @@ public class Pizza {
             return this;
         }
 
-        // Method to set multiple toppings at once (overwriting existing ones)
+        // Set multiple toppings at once (overwriting existing ones)
         public Builder withToppings(Set<Toppings> toppings) {
             this.toppings.clear(); // Clear existing
             if (toppings != null) {

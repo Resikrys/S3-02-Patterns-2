@@ -10,8 +10,17 @@ import java.util.HashSet;
 public class CustomPizzaBuilder implements PizzaBuilder {
     private Pizza.Builder pizzaBuilder;
 
+//    public CustomPizzaBuilder() {
+//        this.pizzaBuilder = new Pizza.Builder();  // No defaults set
+//    }
+
     public CustomPizzaBuilder() {
-        this.pizzaBuilder = new Pizza.Builder();  // No defaults set
+        reset(); // Initialize
+    }
+
+    @Override
+    public void reset() {
+        this.pizzaBuilder = new Pizza.Builder();
     }
 
     @Override
@@ -32,11 +41,11 @@ public class CustomPizzaBuilder implements PizzaBuilder {
         return this;
     }
 
-//    @Override
-//    public PizzaBuilder withToppings(Set<Toppings> toppings) {
-//        this.pizzaBuilder.withToppings(toppings);
-//        return this;
-//    }
+    @Override
+    public PizzaBuilder withToppings(Set<Toppings> toppings) {
+        this.pizzaBuilder.withToppings(toppings);
+        return this;
+    }
 
     @Override
     public Pizza build() {

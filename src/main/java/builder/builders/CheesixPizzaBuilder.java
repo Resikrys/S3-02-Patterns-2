@@ -10,9 +10,23 @@ import java.util.HashSet;
 public class CheesixPizzaBuilder implements PizzaBuilder {
     private Pizza.Builder pizzaBuilder; // Internal builder instance
 
+    //    public CheesixPizzaBuilder() {
+//        this.pizzaBuilder = new Pizza.Builder();
+//        // Set default values for a Cheesix Pizza
+//        this.pizzaBuilder
+//                .withSize(Size.MEDIUM)
+//                .withDough(Dough.REGULAR);
+//        this.pizzaBuilder.addTopping(Toppings.CHEESE);
+//    }
+
     public CheesixPizzaBuilder() {
-        this.pizzaBuilder = new Pizza.Builder();
-        // Set default values for a Cheesix Pizza
+        reset();
+    }
+
+    @Override
+    public void reset() {
+        this.pizzaBuilder = new Pizza.Builder(); // Create a new, clean internal builder
+        // Set default values
         this.pizzaBuilder
                 .withSize(Size.MEDIUM)
                 .withDough(Dough.REGULAR);
@@ -38,11 +52,11 @@ public class CheesixPizzaBuilder implements PizzaBuilder {
         return this;
     }
 
-//    @Override
-//    public PizzaBuilder withToppings(Set<Toppings> toppings) {
-//        this.pizzaBuilder.withToppings(toppings);
-//        return this;
-//    }
+    @Override
+    public PizzaBuilder withToppings(Set<Toppings> toppings) {
+        this.pizzaBuilder.withToppings(toppings);
+        return this;
+    }
 
     @Override
     public Pizza build() {
