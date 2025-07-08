@@ -19,7 +19,7 @@ public class CheesixPizzaBuilder implements PizzaBuilder {
         this.pizzaBuilder.addTopping(Toppings.CHEESE);
     }
 
-    // These methods allow overriding defaults if needed, or you can just use the constructor's defaults
+    // These methods allow overriding defaults if needed
     @Override
     public PizzaBuilder setSize(Size size) {
         this.pizzaBuilder.withSize(size);

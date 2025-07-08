@@ -17,7 +17,7 @@ public class Pizza {
     private Pizza(Builder builder) {
         this.size = builder.size;
         this.dough = builder.dough;
-        this.toppings = new HashSet<>(builder.toppings);
+        this.toppings = new HashSet<>(builder.toppings); //Create a defensive copy to ensure immutability (identical copy but disconnected from the original)
     }
 
     public Size getSize() {

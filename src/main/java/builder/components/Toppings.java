@@ -2,6 +2,8 @@ package builder.components;
 
 public enum Toppings {
     CHEESE("Cheese"),
+    MOZZARELLA("Mozzarella"),
+    PARMESAN("Parmesan"),
     PEPPERONI("Pepperoni"),
     MUSHROOMS("Mushrooms"),
     ONIONS("Onions"),
