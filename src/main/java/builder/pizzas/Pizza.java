@@ -39,9 +39,9 @@ public class Pizza {
                         .map(Toppings::getDescription)
                         .collect(Collectors.joining(", "));
 
-        return "Pizza [Size=" + size.getDescription() +
-                ", Dough=" + dough.getDescription() +
-                ", Toppings=" + toppingsString + "]";
+        return "Pizza [Size= " + size.getDescription() +
+                ", Dough= " + dough.getDescription() +
+                ", Toppings= " + toppingsString + "]";
     }
 
     // --- Inner Builder Class --- Return "this" for method chaining
@@ -49,6 +49,11 @@ public class Pizza {
         private Size size;
         private Dough dough;
         private Set<Toppings> toppings;
+
+        // FIX: Initialize the Set in the Builder's constructor
+        public Builder() {
+            this.toppings = new HashSet<>(); // Initialize the toppings set here!
+        }
 
         public Builder withSize(Size size) {
             this.size = size;
