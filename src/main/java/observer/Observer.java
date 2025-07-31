@@ -1,5 +1,7 @@
 package observer;
 
+import jdk.jfr.EventType;
+
 public interface Observer {
-    //update(Str stockStateChange)
+    void update (EventType event);
 }
