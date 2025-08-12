@@ -5,17 +5,12 @@ import builder.components.Size;
 import builder.components.Dough;
 import builder.components.Toppings;
 import java.util.Set;
-import java.util.HashSet;
 
 public class CustomPizzaBuilder implements PizzaBuilder {
     private Pizza.Builder pizzaBuilder;
 
-//    public CustomPizzaBuilder() {
-//        this.pizzaBuilder = new Pizza.Builder();  // No defaults set
-//    }
-
     public CustomPizzaBuilder() {
-        reset(); // Initialize
+        reset();
     }
 
     @Override

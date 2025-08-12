@@ -5,19 +5,9 @@ import builder.components.Size;
 import builder.components.Dough;
 import builder.components.Toppings;
 import java.util.Set;
-import java.util.HashSet;
 
 public class CheesixPizzaBuilder implements PizzaBuilder {
-    private Pizza.Builder pizzaBuilder; // Internal builder instance
-
-    //    public CheesixPizzaBuilder() {
-//        this.pizzaBuilder = new Pizza.Builder();
-//        // Set default values for a Cheesix Pizza
-//        this.pizzaBuilder
-//                .withSize(Size.MEDIUM)
-//                .withDough(Dough.REGULAR);
-//        this.pizzaBuilder.addTopping(Toppings.CHEESE);
-//    }
+    private Pizza.Builder pizzaBuilder;
 
     public CheesixPizzaBuilder() {
         reset();
@@ -25,7 +15,7 @@ public class CheesixPizzaBuilder implements PizzaBuilder {
 
     @Override
     public void reset() {
-        this.pizzaBuilder = new Pizza.Builder(); // Create a new, clean internal builder
+        this.pizzaBuilder = new Pizza.Builder();
         // Set default values
         this.pizzaBuilder
                 .withSize(Size.MEDIUM)
@@ -33,7 +23,6 @@ public class CheesixPizzaBuilder implements PizzaBuilder {
         this.pizzaBuilder.addTopping(Toppings.CHEESE);
     }
 
-    // These methods allow overriding defaults if needed
     @Override
     public PizzaBuilder setSize(Size size) {
         this.pizzaBuilder.withSize(size);

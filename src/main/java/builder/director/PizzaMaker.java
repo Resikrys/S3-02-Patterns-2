@@ -17,8 +17,6 @@ public class PizzaMaker {
     }
 
     public Pizza makeCheesixPizza() {
-        // Reset the builder to a clean state for a new pizza + call build (constructor by default or explicitly)
-        // [ For a director, passing a fresh builder is cleaner. ]
         pizzaBuilder.reset();
 
         pizzaBuilder.setSize(Size.MEDIUM);
@@ -63,8 +61,6 @@ public class PizzaMaker {
         return pizzaBuilder.build();
     }
 
-    // This method allows external control over the specific builder's methods
-    // (director simply passes the client's choices directly to the builder)
     public Pizza makeCustomPizza(Size size, Dough dough, Set<Toppings> toppings) {
         pizzaBuilder.reset();
         pizzaBuilder.setSize(size);

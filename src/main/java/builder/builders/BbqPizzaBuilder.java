@@ -5,20 +5,9 @@ import builder.components.Size;
 import builder.components.Dough;
 import builder.components.Toppings;
 import java.util.Set;
-import java.util.HashSet;
 
 public class BbqPizzaBuilder implements PizzaBuilder {
     private Pizza.Builder pizzaBuilder;
-
-//    public BbqPizzaBuilder() {
-//        this.pizzaBuilder = new Pizza.Builder();
-//        this.pizzaBuilder
-//                .withSize(Size.FAMILIAR)
-//                .withDough(Dough.REGULAR);
-//        this.pizzaBuilder.addTopping(Toppings.CHICKEN);
-//        this.pizzaBuilder.addTopping(Toppings.BBQ_SAUCE);
-//        this.pizzaBuilder.addTopping(Toppings.ONIONS);
-//    }
 
     public BbqPizzaBuilder() {
         reset();
