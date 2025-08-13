@@ -4,7 +4,7 @@ public class RunDemo {
     public void start() {
         StockMarket stockMarket = new StockMarket(100.0);
 
-        Stockbroker broker = new Stockbroker();
+        StockBroker broker = new StockBroker();
 
         stockMarket.registerObserver(broker);
 

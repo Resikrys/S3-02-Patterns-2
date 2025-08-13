@@ -3,14 +3,14 @@ package observer;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Stockbroker implements Observer   {
+public class StockBroker implements Observer   {
 //    private List<Observer> observers;
 //    private double marketValue;
 //    private String marketState; // "subida" o "bajada"
     private List<StockExchangeAgency> agencies;
     private double lastKnownValue;
 
-    public Stockbroker() {
+    public StockBroker() {
 //        this.observers = new ArrayList<>();
 //        this.marketValue = initialValue;
 //        this.marketState = "stable";
@@ -21,8 +21,14 @@ public class Stockbroker implements Observer   {
 
     public void registerAgency(StockExchangeAgency agency) {
         agencies.add(agency);
-        System.out.println("Agencia " + agency.getAgencyName() + " registered with the StockBroker.");
+        System.out.println("Agency " + agency.getAgencyName() + " registered with the StockBroker.");
     }
+
+    public void deleteAgency(StockExchangeAgency agency) {
+        agencies.remove(agency);
+        System.out.println("Agency " + agency.getAgencyName() + " deleted.");
+    }
+
     @Override
     public void update(double newValue) {
         if (lastKnownValue == -1) {
