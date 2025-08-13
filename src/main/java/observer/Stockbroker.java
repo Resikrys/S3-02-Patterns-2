@@ -1,4 +1,4 @@
-package observer; //Agent de Borsa -> notificador (rep l'evento) -> concrete Observable
+package observer;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -33,16 +33,16 @@ public class Stockbroker implements Observer   {
 
         String state;
         if (newValue > lastKnownValue) {
-            state = "subida";
+            state = "up";
         } else if (newValue < lastKnownValue) {
-            state = "bajada";
+            state = "down";
         } else {
-            state = "estable";
+            state = "stable";
         }
 
-        System.out.println("StockBroker ha recibido una actualización. El mercado está en " + state + ".");
+        System.out.println("StockBroker has received an update. The market is in " + state + ".");
 
-        if (!"estable".equals(state)) {
+        if (!"stable".equals(state)) {
             notifyAgencies(state);
         }
         this.lastKnownValue = newValue;

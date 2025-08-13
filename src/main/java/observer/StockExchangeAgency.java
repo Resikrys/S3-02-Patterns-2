@@ -1,6 +1,6 @@
 package observer; //Agencia -> observador (rep al notificació)
 
-public class StockExchangeAgency implements Observer {
+public class StockExchangeAgency {
     //Implements Observer -> concrete observer
     //String name + method update()... notification
     private String agencyName;
@@ -9,8 +9,11 @@ public class StockExchangeAgency implements Observer {
         this.agencyName = agencyName;
     }
 
-    @Override
     public void update(String change) {
-        System.out.println("Agency " + agencyName + ": ¡Alert! The Stock Exchange has experienced a chnage: " + change + ".");
+        System.out.println("Agency " + agencyName + ": ¡Alert! The Stock Exchange has experienced a chnage " + change + ".");
+    }
+
+    public String getAgencyName() {
+        return agencyName;
     }
 }
