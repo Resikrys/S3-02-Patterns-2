@@ -1,8 +1,6 @@
-package observer; //Agencia -> observador (rep al notificació)
+package observer;
 
 public class StockExchangeAgency {
-    //Implements Observer -> concrete observer
-    //String name + method update()... notification
     private String agencyName;
 
     public StockExchangeAgency(String agencyName) {
