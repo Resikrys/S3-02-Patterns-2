@@ -10,7 +10,7 @@ public class Stockbroker implements Observer   {
     private List<StockExchangeAgency> agencies;
     private double lastKnownValue;
 
-    public Stockbroker(double initialValue) {
+    public Stockbroker() {
 //        this.observers = new ArrayList<>();
 //        this.marketValue = initialValue;
 //        this.marketState = "stable";
