@@ -1,4 +1,4 @@
-# S3.01 - Patterns 1
+# S3.02 - Patterns 2
 ![Java](https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white)
 
 ### 🎯 Learning Objectives
