@@ -1,6 +1,6 @@
 package callback.OptionA;
 
-public class runDemoOptionA {
+public class RunDemoOptionA {
     public void start() {
         ShoeStore myShoeStore = new ShoeStore();
 
