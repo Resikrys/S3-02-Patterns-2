@@ -30,7 +30,7 @@ you to build pizzas in a specific way.
 MestrePizzer, and use them to build pizzas with different configurations.
 
 ## 📄 LVL 2: Observer
-Design a system in which a Stock Broker (Observable) notifies several 
+Design a system in which a Stock Exchange Agencies (Observable) notifies several 
 Stock Brokers (Observers) of changes when the Stock Market goes up or down.
 
 - It is necessary for the Observable object to maintain references to 
