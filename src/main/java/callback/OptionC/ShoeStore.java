@@ -14,15 +14,15 @@ public class ShoeStore {
     }
 
     public void sellShoes(double price, String customerName, PaymentMethod method) {
-        System.out.println("\n👟🛍️ " + customerName + ", ¡gracias por tu compra en nuestra zapatería!");
-        System.out.println("  Total a pagar: " + price + "€");
+        System.out.println("\n👟🛍️ " + customerName + ", thank you for your purchase in our shoe store!");
+        System.out.println(" Total to pay: " + price + "€");
         boolean success = paymentGateway.executePayment(method, price);
 
         if (success) {
-            System.out.println("  ✅ ¡Tu pedido se ha procesado con éxito!");
+            System.out.println(" ✅ Your order has been processed successfully!");
         } else {
-            System.out.println("  ❌ Lo sentimos, ha ocurrido un error con tu pago. Por favor, inténtalo de nuevo.");
+            System.out.println(" ❌ We're sorry, an error occurred with your payment. Please try again.");
         }
-        System.out.println("  ¡Esperamos verte de nuevo pronto, " + customerName + "!");
+        System.out.println(" We hope to see you again soon, " + customerName + "!");
     }
 }

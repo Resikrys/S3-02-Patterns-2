@@ -9,7 +9,7 @@ public class RunDemoOptionC {
     public void start() {
         ShoeStore myShoeStore = new ShoeStore();
 
-        PaymentMethod creditCard = new CreditCardPayment("1234567890123456", "John Doe", myShoeStore.paymentApi);
+        PaymentMethod creditCard = new CreditCardPayment("1234567890123456", myShoeStore.paymentApi);
         myShoeStore.sellShoes(75.50, "John Doe", creditCard);
 
         PaymentMethod paypal = new PaypalPayment("jane.doe@example.com", myShoeStore.paymentApi);

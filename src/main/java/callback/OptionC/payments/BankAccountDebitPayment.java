@@ -2,10 +2,12 @@ package callback.OptionC.payments;
 
 public class BankAccountDebitPayment implements PaymentMethod {
     private String accountNumber;
+    private String bankName;
     private PaymentApi api;
 
     public BankAccountDebitPayment(String accountNumber, String bankName, PaymentApi api) {
         this.accountNumber = accountNumber;
+        this.bankName = bankName;
         this.api = api;
     }
 
