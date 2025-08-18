@@ -11,7 +11,7 @@ public class PaypalPayment implements PaymentMethod {
 
     @Override
     public boolean processPayment(double amount) {
-        System.out.println("🅿️ Procesando pago con PayPal...");
+        System.out.println("🅿️ Processing payment with PayPal...");
         return api.processPaypal(email, amount);
     }
 }

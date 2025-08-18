@@ -9,16 +9,13 @@ public class RunDemoOptionC {
     public void start() {
         ShoeStore myShoeStore = new ShoeStore();
 
-        // Cliente 1: Paga con tarjeta de crédito
-        PaymentMethod creditCard = new CreditCardPayment("1234567890123456", "Juan Pérez", myShoeStore.paymentApi);
-        myShoeStore.sellShoes(75.50, "Juan Pérez", creditCard);
+        PaymentMethod creditCard = new CreditCardPayment("1234567890123456", "John Doe", myShoeStore.paymentApi);
+        myShoeStore.sellShoes(75.50, "John Doe", creditCard);
 
-        // Cliente 2: Paga con PayPal
-        PaymentMethod paypal = new PaypalPayment("maria.gonzalez@example.com", myShoeStore.paymentApi);
-        myShoeStore.sellShoes(120.00, "María González", paypal);
+        PaymentMethod paypal = new PaypalPayment("jane.doe@example.com", myShoeStore.paymentApi);
+        myShoeStore.sellShoes(120.00, "Jane Doe", paypal);
 
-        // Cliente 3: Paga con débito en cuenta bancaria
-        PaymentMethod bankDebit = new BankAccountDebitPayment("ES12345678901234567890", "Banco Ficticio", myShoeStore.paymentApi);
-        myShoeStore.sellShoes(99.99, "Pedro García", bankDebit);
+        PaymentMethod bankDebit = new BankAccountDebitPayment("ES12345678901234567890", "Fictional Bank", myShoeStore.paymentApi);
+        myShoeStore.sellShoes(99.99, "Yue Moon", bankDebit);
     }
 }

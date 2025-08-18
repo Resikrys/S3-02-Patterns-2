@@ -2,7 +2,7 @@ package callback.OptionC.payments;
 
 public class CreditCardPayment implements PaymentMethod {
     private String cardNumber;
-    private PaymentApi api; // Inyectamos la dependencia de la API
+    private PaymentApi api;
 
     public CreditCardPayment(String cardNumber, String cardHolder, PaymentApi api) {
         this.cardNumber = cardNumber;
@@ -11,7 +11,7 @@ public class CreditCardPayment implements PaymentMethod {
 
     @Override
     public boolean processPayment(double amount) {
-        System.out.println("💳 Procesando pago con Tarjeta de Crédito...");
+        System.out.println("💳 Processing Credit Card payment...");
         return api.processCreditCard(cardNumber, amount);
     }
 }

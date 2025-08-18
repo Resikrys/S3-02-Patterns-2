@@ -11,7 +11,7 @@ public class BankAccountDebitPayment implements PaymentMethod {
 
     @Override
     public boolean processPayment(double amount) {
-        System.out.println("🏦 Procesando débito en cuenta bancaria...");
+        System.out.println("🏦 Processing debit to bank account...");
         return api.processBankDebit(accountNumber, amount);
     }
 }

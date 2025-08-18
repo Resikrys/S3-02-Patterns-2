@@ -7,37 +7,37 @@ public class PaymentApi {
     private static final int MAX_DELAY_MS = 3000;
 
     public boolean processCreditCard(String cardNumber, double amount) {
-        System.out.println("💳 API: Conectando con el servicio de Tarjetas de Crédito...");
+        System.out.println("💳 API: Connecting to the Credit Card service...");
         simulateNetworkDelay();
-        if (new Random().nextInt(10) < 8) { // 80% de éxito
-            System.out.println("✅ API: Pago con Tarjeta de Crédito procesado.");
+        if (new Random().nextInt(10) < 8) { // 80% success
+            System.out.println("✅ API: Credit Card Payment Processed.");
             return true;
         } else {
-            System.out.println("❌ API: Error al procesar el pago con Tarjeta de Crédito.");
+            System.out.println("❌ API: Error processing Credit Card payment.");
             return false;
         }
     }
 
     public boolean processPaypal(String email, double amount) {
-        System.out.println("🅿️ API: Redirigiendo a la API de PayPal...");
+        System.out.println("🅿️ API: Redirecting to PayPal API...");
         simulateNetworkDelay();
-        if (new Random().nextInt(10) < 9) { // 90% de éxito
-            System.out.println("✅ API: Pago con PayPal procesado.");
+        if (new Random().nextInt(10) < 9) { // 90% success
+            System.out.println("✅ API: PayPal payment processed.");
             return true;
         } else {
-            System.out.println("❌ API: Error de autenticación en PayPal.");
+            System.out.println("❌ API: PayPal authentication failed.");
             return false;
         }
     }
 
     public boolean processBankDebit(String accountNumber, double amount) {
-        System.out.println("🏦 API: Solicitando débito a la cuenta bancaria...");
+        System.out.println("🏦 API: Requesting bank debit...");
         simulateNetworkDelay();
-        if (new Random().nextInt(10) < 7) { // 70% de éxito
-            System.out.println("✅ API: Débito bancario procesado.");
+        if (new Random().nextInt(10) < 7) { // 70% success
+            System.out.println("✅ API: Bank debit processed.");
             return true;
         } else {
-            System.out.println("❌ API: Fondos insuficientes o cuenta no válida.");
+            System.out.println("❌ API: Insufficient funds or invalid account.");
             return false;
         }
     }
@@ -48,7 +48,7 @@ public class PaymentApi {
             Thread.sleep(delay);
         } catch (InterruptedException e) {
             Thread.currentThread().interrupt();
-            System.err.println("Error en el retardo de la simulación de red.");
+            System.err.println("Network simulation delay error.");
         }
     }
 }
