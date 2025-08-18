@@ -1,4 +1,4 @@
-package callback;
+package callback.OptionB;
 
 public interface PaymentCallback {
     void onPaymentSuccess(String message);
