@@ -1,8 +1,12 @@
 package callback.OptionC;
 
+import callback.OptionC.payments.PaymentApi;
+import callback.OptionC.payments.PaymentGateway;
+import callback.OptionC.payments.PaymentMethod;
+
 public class ShoeStore {
     private PaymentGateway paymentGateway;
-    private PaymentApi paymentApi;
+    PaymentApi paymentApi;
 
     public ShoeStore() {
         this.paymentApi = new PaymentApi();

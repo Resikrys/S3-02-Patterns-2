@@ -1,4 +1,4 @@
-package callback.OptionC;
+package callback.OptionC.payments;
 
 import java.util.Random;
 

@@ -1,4 +1,4 @@
-package callback.OptionC;
+package callback.OptionC.payments;
 
 public class BankAccountDebitPayment implements PaymentMethod {
     private String accountNumber;

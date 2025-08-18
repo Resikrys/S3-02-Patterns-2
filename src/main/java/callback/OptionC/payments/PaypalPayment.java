@@ -1,4 +1,4 @@
-package callback.OptionC;
+package callback.OptionC.payments;
 
 public class PaypalPayment implements PaymentMethod {
     private String email;

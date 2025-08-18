@@ -1,4 +1,4 @@
-package callback.OptionC;
+package callback.OptionC.payments;
 
 public class PaymentGateway {
     public boolean executePayment(PaymentMethod method, double amount) {
