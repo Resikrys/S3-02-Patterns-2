@@ -9,11 +9,11 @@ public class PaypalPayment implements PaymentMethod {
 
     @Override
     public void processPayment(double amount) {
-        System.out.println("🅿️ Procesando pago con PayPal:");
-        System.out.println("  Cantidad: " + amount + "€");
-        System.out.println("  Email de PayPal: " + email);
-        System.out.println("  Redirigiendo a PayPal para la confirmación...");
-        System.out.println("  Pago con PayPal realizado con éxito.");
-        // Aquí iría la lógica real de comunicación con la API de PayPal
+        System.out.println("🅿️ Processing PayPal payment:");
+        System.out.println(" Amount: " + amount + "€");
+        System.out.println(" PayPal Email: " + email);
+        System.out.println(" Redirecting to PayPal for confirmation...");
+        System.out.println(" PayPal payment successful.");
+        // This is where the actual logic for communicating with the PayPal API would go.
     }
 }

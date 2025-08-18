@@ -15,12 +15,12 @@ public class CreditCardPayment implements PaymentMethod {
 
     @Override
     public void processPayment(double amount) {
-        System.out.println("💳 Procesando pago con Tarjeta de Crédito:");
-        System.out.println("  Cantidad: " + amount + "€");
-        System.out.println("  Número de tarjeta: **** **** **** " + cardNumber.substring(cardNumber.length() - 4));
-        System.out.println("  Titular: " + cardHolder);
-        System.out.println("  Fecha caducidad: " + cardDate + ", CVV: " + cardCvv);
-        System.out.println("  Pago con Tarjeta de Crédito realizado con éxito.");
-        // Aquí iría la lógica real de comunicación con una API de tarjeta de crédito
+        System.out.println("💳 Processing Credit Card payment:");
+        System.out.println(" Amount: " + amount + "€");
+        System.out.println(" Card number: **** **** **** " + cardNumber.substring(cardNumber.length() - 4));
+        System.out.println(" Cardholder: " + cardHolder);
+        System.out.println(" Expiration date: " + cardDate + ", CVV: " + cardCvv);
+        System.out.println(" Credit Card payment successfully completed.");
+        // This is where the actual logic for communicating with a credit card API would go.
     }
 }

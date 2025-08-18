@@ -11,11 +11,11 @@ public class BankAccountDebitPayment implements PaymentMethod {
 
     @Override
     public void processPayment(double amount) {
-        System.out.println("🏦 Procesando débito en cuenta bancaria:");
-        System.out.println("  Cantidad: " + amount + "€");
-        System.out.println("  Número de cuenta: " + accountNumber);
-        System.out.println("  Banco: " + bankName);
-        System.out.println("  Débito bancario procesado con éxito.");
-        // Aquí iría la lógica real de comunicación con un sistema bancario
+        System.out.println("🏦 Processing bank account debit:");
+        System.out.println(" Amount: " + amount + "€");
+        System.out.println(" Account Number: " + accountNumber);
+        System.out.println(" Bank: " + bankName);
+        System.out.println(" Bank debit processed successfully.");
+        // This is where the actual logic for communicating with a banking system would go.
     }
 }
