@@ -34,7 +34,7 @@ Design a system in which a Stock Exchange Agencies (Observable) notifies several
 Stock Brokers (Observers) of changes when the Stock Market goes up or down.
 
 - It is necessary for the Observable object to maintain references to 
-- the Observers.
+the Observers.
 
 ## 📄 LVL 3: Callback
 Simulate a payment gateway that receives an object encapsulating the payment 
@@ -51,6 +51,10 @@ returning control to the origin class.
 | `java`         | ^1.8.0_441 | Principal project language |
 | `Apache maven` | ^4.0.0 | Project management tool    |
 | `java.util`    | ^1.8.0_441 | Java standard library      |
+| `JUnit`        | ^5.10.0     | Unit testing framework              |
+| `Mockito`      | ^5.12.0     | Mocking framework for unit testing  |
+| `SLF4J`        | ^2.0.13     | Simple Logging Facade for Java      |
+| `Logback`      | ^1.5.6      | Logging backend implementation      |
 
 
 ### REQUIREMENTS
@@ -62,8 +66,12 @@ To Run code, press `Ctrl F5` or click the `play` icon in the gutter.
 ### 🛠️ SCRIPTS
 
 ```bash
-mvn compile          # Compile project
-mvn package          # Package in .jar
+mvn clean            # Clean previous compilation
+mvn compile          # Compile the project
+mvn test             # Execute tests with JUnit/Mockito
+mvn package          # Package the project into a .jar
+mvn install          # Install the .jar in the local repository
+mvn exec:java        # Run the application (if the exec plugin is configured)
 ```
 
 ## ▶️ How to Run Scripts
