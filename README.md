@@ -96,7 +96,7 @@ java -cp target/S3_02_Patterns2-1.0-SNAPSHOT.jar com.s3.patterns2.builder.Main u
 
 To Run code, press `Ctrl F5` or click the `play` icon in the gutter.
 
-Cada subproyecto tiene su propio `Main.java`. Se pueden ejecutar con **Maven** (`exec-maven-plugin`) o directamente con el **.jar** generado.
+Each subproject has its own `Main.java`. They can be run with **Maven** (`exec-maven-plugin`) or directly with the generated **.jar**.
 
 | Subproyecto | Clase Main                                   | Ejecutar con Maven                                                                                  | Ejecutar con .jar                                                                                                  |
 |-------------|----------------------------------------------|------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------|
