@@ -66,17 +66,53 @@ To Run code, press `Ctrl F5` or click the `play` icon in the gutter.
 ### 🛠️ SCRIPTS
 
 ```bash
-mvn clean            # Clean previous compilation
-mvn compile          # Compile the project
-mvn test             # Execute tests with JUnit/Mockito
-mvn package          # Package the project into a .jar
-mvn install          # Install the .jar in the local repository
-mvn exec:java        # Run the application (if the exec plugin is configured)
+# 🔹 Basic scripts:
+mvn clean                  # Limpia los archivos compilados previos
+mvn compile                # Compila el proyecto
+mvn test                   # Ejecuta los tests con JUnit/Mockito
+mvn package                # Empaqueta el proyecto en un .jar
+mvn install                # Instala el .jar en el repositorio local
+
+# 🔹 Running each subproject using Maven
+# (requires configuration of exec-maven-plugin in pom.xml)
+
+mvn exec:java -Dexec.mainClass="com.s3.patterns2.builder.Main"
+mvn exec:java -Dexec.mainClass="com.s3.patterns2.callback.Main"
+mvn exec:java -Dexec.mainClass="com.s3.patterns2.observer.Main"
+
+# With command line arguments
+mvn exec:java -Dexec.mainClass="com.s3.patterns2.builder.Main" -Dexec.args="usuario1 1234 modo_debug"
+
+# 🔹 Alternative: Run the generated .jar files directly
+java -cp target/S3_02_Patterns2-1.0-SNAPSHOT.jar com.s3.patterns2.builder.Main
+java -cp target/S3_02_Patterns2-1.0-SNAPSHOT.jar com.s3.patterns2.callback.Main
+java -cp target/S3_02_Patterns2-1.0-SNAPSHOT.jar com.s3.patterns2.observer.Main
+
+# With arguments
+java -cp target/S3_02_Patterns2-1.0-SNAPSHOT.jar com.s3.patterns2.builder.Main usuario1 1234 modo_debug
 ```
 
 ## ▶️ How to Run Scripts
 
 To Run code, press `Ctrl F5` or click the `play` icon in the gutter.
+
+Cada subproyecto tiene su propio `Main.java`. Se pueden ejecutar con **Maven** (`exec-maven-plugin`) o directamente con el **.jar** generado.
+
+| Subproyecto | Clase Main                                   | Ejecutar con Maven                                                                                  | Ejecutar con .jar                                                                                                  |
+|-------------|----------------------------------------------|------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------|
+| Builder     | `com.s3.patterns2.builder.Main`              | `mvn compile exec:java -Dexec.mainClass="com.s3.patterns2.builder.Main"`                            | `java -cp target/S3_02_Patterns2-1.0-SNAPSHOT.jar com.s3.patterns2.builder.Main`                                   |
+| Callback    | `com.s3.patterns2.callback.Main`             | `mvn compile exec:java -Dexec.mainClass="com.s3.patterns2.callback.Main"`                           | `java -cp target/S3_02_Patterns2-1.0-SNAPSHOT.jar com.s3.patterns2.callback.Main`                                  |
+| Observer    | `com.s3.patterns2.observer.Main`             | `mvn compile exec:java -Dexec.mainClass="com.s3.patterns2.observer.Main"`                           | `java -cp target/S3_02_Patterns2-1.0-SNAPSHOT.jar com.s3.patterns2.observer.Main`                                  |
+
+### 🔹 Examples with arguments
+
+```bash
+# Using Maven (Builder with arguments)
+mvn compile exec:java -Dexec.mainClass="com.s3.patterns2.builder.Main" -Dexec.args="usuario1 1234 modo_debug"
+
+# Using .jar (Callback with arguments)
+java -cp target/S3_02_Patterns2-1.0-SNAPSHOT.jar com.s3.patterns2.callback.Main usuario1 1234 modo_debug
+```
 
 ## 📚 Additional Resources
 
