@@ -1,6 +1,11 @@
 package callback.OptionC.payments;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 public class CreditCardPayment implements PaymentMethod {
+    private static final Logger logger = LoggerFactory.getLogger(CreditCardPayment.class);
+
     private String cardNumber;
     private String cardHolder;
     private String cardDate;
@@ -21,7 +26,7 @@ public class CreditCardPayment implements PaymentMethod {
 
     @Override
     public boolean processPayment(double amount) {
-        System.out.println("💳 Processing Credit Card payment...");
+        logger.info("💳 Processing Credit Card payment...");
         return api.processCreditCard(cardNumber, amount);
     }
 }
